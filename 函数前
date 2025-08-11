@@ -1,0 +1,224 @@
+'''
+1、C str
+2、D
+'''
+# 4、
+num=float(input("请输入购买的数量："))
+all=float(input('请输入支付金额：'))
+change=all-(num*10)
+print('找您',change,'元')
+# 5、
+apple=float(input("请输入购买苹果（个）"))
+banana=float(input("请输入购买香蕉（kg）"))
+orange=float(input("请输入购买橙子（组）"))
+all=apple*2+banana*5+orange*4
+print('一共',all,'元')
+print(f'购买苹果{apple}个',
+      f'购买香蕉{banana}kg',
+      f'购买橙子{orange}组',sep='\n')
+year=int(input('输入一个年份'))
+if year%4==0 and not year%100==0 or year%400==0:
+    print('闰年')
+else:
+    print('平年')
+
+name=input('请输入用户名：')
+passward=input('请输入密码')
+if name=='123' and passward=="qqq111" :
+    print("登录成功")
+else:
+    print('用11户名或密码错误！')
+
+year=int(input('year'))
+month=int(input('month'))
+if month==1 or month==3 or month==5 or month==7 or month==8 or month==10 or month==12:
+    print(31)
+elif month==4 or month==6 or month==9 or month==11 :
+    print(30)
+elif month==2 :
+    if year % 4 == 0 and not year % 100 == 0 or year % 400 == 0:
+     print(29)
+    else:
+     print(28)
+else:
+    print(404)
+
+num1=float(input('num1'))
+num2=float(input('num2'))
+num3=float(input('num3'))
+if num1>=num2 :
+    if num1>=num3:
+        print(rf'max={num1}')
+        if num2>=num3 :
+            print(rf'min={num3}')
+        else :
+            print(rf'min={num2}')
+    else :
+        print(rf"max={num3}"'\n'rf'min={num2}')
+if num3>=num2 :
+    if num3>=num1:
+        print(rf'max={num3}')
+        if num2>=num1 :
+            print(rf'min={num1}')
+        else :
+            print(rf'min={num2}')
+    else :
+        print(rf"max={num1}"'\n'rf'min={num2}')
+if num2>=num1 :
+    if num2>=num3:
+        print(rf'max={num2}')
+        if num1>=num3 :
+            print(rf'min={num3}')
+        else :
+            print(rf'min={num1}')
+    else :
+        print(rf"max={num3}"'\n'rf'min={num1}')
+# 三个并非互斥，有交集的话就会出现打两次
+num1 = float(input('num1: '))
+num2 = float(input('num2: '))
+num3 = float(input('num3: '))
+
+# 先找最大值
+if num1 >= num2 and num1 >= num3:
+    max_val = num1
+    # 找最小值（在 num1 是最大值的前提下）
+    if num2 <= num3:
+        min_val = num2
+    else:
+        min_val = num3
+elif num2 >= num1 and num2 >= num3:
+    max_val = num2
+    # 找最小值（在 num2 是最大值的前提下）
+    if num1 <= num3:
+        min_val = num1
+    else:
+        min_val = num3
+else:
+    max_val = num3
+    # 找最小值（在 num3 是最大值的前提下）
+    if num1 <= num2:
+        min_val = num1
+    else:
+        min_val = num2
+
+
+temp=input('选择可乐，矿泉水或果汁')
+all=int(input('给多少钱'))
+if temp=='可乐':
+    if all>3 :
+        print(f'出货并找零{all-3}元')
+    elif all==3 :
+        print('出货不找零')
+    else :
+        print(f'还差{3-all}元')
+if temp=='矿泉水':
+    if all>2 :
+        print(f'出货并找零{all-2}元')
+    elif all==2 :
+        print('出货不找零')
+    else :
+        print(f'还差{2-all}元')
+if temp=='果汁':
+    if all>5 :
+        print(f'出货并找零{all-5}元')
+    elif all==5 :
+        print('出货不找零')
+    else :
+        print(f'还差{5-all}元')
+i2=0
+i3=0
+i4=0
+for i in range(1,101):
+    if i%2==0:
+        i2+=1
+    if i%3==0:
+        i3+=1
+    if i%4==0:
+        i4+=1
+print(i2,i3,i4)
+
+
+name='123456'
+passward="123456"
+for i in range(3):
+    n=input('name')
+    p=input('passward')
+    if name==n and passward==p:
+        print('Success')
+        break
+
+for i in range(1,11):
+    for f in range(1,11):
+        print(f'the {i} day the {f} one')
+
+numbers={9,1,3,5,6}
+print("max is",max(numbers),'\n'"min is",min(numbers),'\n','average is',sum(numbers)/len(numbers))
+
+str1="zxczxczxc"
+length=len(str1)
+word=input('输入查找的字符')
+start=0
+count=0
+while True :
+    if str1[start]==word:
+        print(start)
+        count+=1
+    start+=1
+    if start==length :
+        if count==0 :
+            print('没有这个字符')
+        break
+lis =[1,2,3,2,1,4,4,4,2,5,6,7,7,8,8,10,10]
+new_list=set(lis)
+print(new_list)
+new_list=list(new_list)
+print(new_list)
+
+
+students =[
+{'name':'小明','age':18,'score':98,'tel':'18888888888','gender':'female'},
+{'name':'小红','age':20,'score':95,'tel':'18888888889','gender':'unkown'},
+{'name':'小邓','age':18,'score':88,'tel':'18888888810','gender':'male'},
+{'name':'小周','age':16,'score':58,'tel':'18888888811','gender':'unkown'},
+{'name':'小林','age':19,'score':78,'tel':'18888888812','gender': 'male'},
+{'name':'小薛','age':17,'score':92,'tel':'18888888813','gender': 'male'},
+]
+count=0
+for i in students:
+    if i['age']<18 :
+        print(i)
+    if i['score']>=90 :
+        print(i['name'],i['score'])
+    if i['gender']=='female':
+        count+=1
+print(count)
+
+import random
+suiji=random.randint(1,100)
+while True :
+    a=int(input('输入一个数字'))
+    if a==suiji:
+        print('right')
+        break
+    elif a>suiji:
+        print('输的大了')
+    else :
+        print('输入得小了')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
