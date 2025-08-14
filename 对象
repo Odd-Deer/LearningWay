@@ -1,0 +1,78 @@
+class Student:
+    count=0
+    def __init__(self,name,age,stud_id):
+        self.name=name
+        self.age=age
+        self.stud_id=stud_id
+        self.scores=[]
+    def add_score(self,score):
+        self.scores.append(score)
+        self.count+=1
+    def get_average(self):
+        self.average=sum(self.scores)/self.count
+        return self.average
+Jim=Student('Jim',18,12345)
+Jim.add_score(90)
+Jim.add_score(85)
+print(Jim.get_average())
+
+# class init init 类
+
+class Person:
+    count=0
+    list_person=[]
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+        Person.count+=1
+        Person.list_person.append({'name':self.name,'age':self.age})
+    def introduce(self):
+        print(f'Hi,my name is {self.name} and I am {self.age} years old.')
+    def find(*args):
+        print(Person.count)
+        names=[]
+        for i in Person.list_person:
+            names.append(i['name'])
+        print(names)
+Person.find()
+zhangsan=Person('zhangsan',19)
+Person.find()
+lisi=Person('lisi',21)
+Person.find()
+
+class BankAccount:
+    def __init__(self,name,balance):
+        self.name=name
+        self.balance=balance
+    def deposit(self,amount):
+        self.balance+=amount
+    def withdraw(self,amount):
+        self.balance-=amount
+        if self.balance<0:
+            print('余额不足')
+            self.balance+=amount
+        else :
+            pass
+    def check_balance(self):
+        print(self.balance)
+jim=BankAccount('jim',1000)
+jack=BankAccount('jac',2000)
+jim.deposit(500)
+jim.check_balance()
+jack.withdraw(500)
+jack.check_balance()
+
+class Phone:
+    brank_set=set()
+    def __init__(self,brank,model,color,price):
+        self.brank=brank
+        Phone.brank_set.add(brank)
+        self.model=model
+        self.color=color
+        self.price=price
+    def describe(self):
+        print(f'这是{self.brank}手机,型号是{self.model},{self.color}色,{self.price}元.')
+huawei=Phone('华为','非凡大师','红','29999')
+xiaomi=Phone('小米','锤子','蓝','1999')
+huawei.describe()
+print(Phone.brank_set)
